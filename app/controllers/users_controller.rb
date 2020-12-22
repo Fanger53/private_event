@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save 
-      current_user(@user.id)
-      flash.notice="user successfully created"
+      session[:user_id] = @user.id
+      flash[:success]="user successfully created"
       redirect_to @user 
     else
-      flash.now[:alert]="Error: #{@user.errors.full_messages.join(', ')}"
+      flash.now[:error]="Error: #{@user.errors.full_messages.join(', ')}"
       render  'new'
     end
   end
