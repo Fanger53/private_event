@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  # include SessionsHelper
+  # before_action :logged_in_user ,only: [:new]
   def index 
   end
   def new 
@@ -19,7 +20,9 @@ class UsersController < ApplicationController
   def show
     @user=User.find(params[:id])
   end
+  private
   def user_params
     params.require(:user).permit(:username) 
   end
+
 end

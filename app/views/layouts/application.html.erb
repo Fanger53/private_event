@@ -14,6 +14,20 @@
     <% flash.each do |name, message| %>
     <div class="<%= name %>"><%= message %></div>
   <% end %>
+  <nav class="navbar-expand-lg bg-dark d-flex justify-content-between">
+    <div class="form-title text-white w-25">
+    <span>simple form</span>
+    </div>
+    <ul class="d-flex justify-content-between text-white w-25">
+    <% if current_user%>
+     <li class="w-25"><%= link_to 'logout', logout_path %></li>
+     <li class="w-25"><%= link_to 'create event', new_event_path %></li>
+     <%else%>
+      <li class="w-25"> <%= link_to 'login', login_path %></li>
+      <%end%>
+     
+    </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
