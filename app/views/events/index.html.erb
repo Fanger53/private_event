@@ -1,5 +1,10 @@
 <h3 class="text-center">page for all events</h3>
 <% @events.each do |e| %>
+<ul class="list-unstyled">
+<li><%= e.name%></li>
+</ul>
+<%end%>
+<% @events.each do |e| %>
 <% if current_user %>
 <ul class="list-unstyled">
 <li> <%= e.name %> </li>
