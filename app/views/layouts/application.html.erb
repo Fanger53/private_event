@@ -16,11 +16,11 @@
       <%= message %>
     </div>
     <% end %>
-      <nav class="navbar-expand-lg bg-dark d-flex justify-content-between">
+      <nav class="navbar-expand-lg bg-dark d-flex justify-content-between mt-3">
         <div class="form-title text-white w-25">
-          <span>simple form</span>
+          <span>private events</span>
         </div>
-        <ul class="d-flex justify-content-between text-white w-25">
+        <ul class="d-flex justify-content-between text-white w-50 ">
           <% if current_user%>
             <li class="w-25">
               <%= link_to 'logout' , logout_path, method: :delete %>
@@ -28,12 +28,17 @@
             <li class="w-25">
               <%= link_to 'create event' , new_event_path %>
             </li>
+            <li class="w-25">
+              <%= link_to 'events' , events_path %>
+            </li>
+            <li><%= link_to current_user.username, user_path(current_user) %></li>
             <%else%>
               <li class="w-25">
                 <%= link_to 'login' , login_path %>
               </li>
               <li><%= link_to "Signup now!" , signup_path %>
               <li><%= link_to 'events', events_path %></li>
+              <li><%= link_to 'create event', new_event_path %></li>
               </li>
               <%end%>
 

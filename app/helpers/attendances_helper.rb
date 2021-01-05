@@ -4,4 +4,7 @@ module AttendancesHelper
       return "d-none"
     end
   end
+  def attendance
+    attendance.all
+  end
 end

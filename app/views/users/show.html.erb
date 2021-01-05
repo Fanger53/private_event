@@ -1,9 +1,15 @@
-<h1> <%= current_user.username%> </h1>
-<div>
-</div>
-<div>
+<h4>list of all your events</h4>
 <% current_user.events.each do |event| %>
 <p><%= link_to event.name, event_path(current_user) %></p>
 <%end%>
 </div>
+<h3>events you are attending</h3>
+<% if current_user.attended_events.any? %>
+<% current_user.attended_events.each do |event| %>
+<ul class="list-unstyled">
+<li><%= event.name%></li>
+</ul>
+
+  <%end%>
+<% end %>
 

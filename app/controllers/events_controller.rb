@@ -4,7 +4,11 @@ class EventsController < ApplicationController
     @events=Event.all
   end
   def new
-    @event= current_user.events.build
+    if current_user
+      @event = Event.new
+    else
+      redirect_to signup_path
+    end
   end
   def create
     @event = current_user.events.build(event_params)
@@ -30,6 +34,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
   def event_params
-  params.require(:event).permit(:name,:description)
+  params.require(:event).permit(:name,:location,:date,:description)
   end
 end
