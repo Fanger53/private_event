@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: %i[show destroy]
   def index 
     @events=Event.all
   end
@@ -16,6 +17,7 @@ class EventsController < ApplicationController
     end
   end
   def show
+    @attendance=Attendance.new
     @event= Event.find(params[:id])
   end
   def destroy
@@ -24,7 +26,10 @@ class EventsController < ApplicationController
     redirect_to root_path 
   end
   private
-def event_params
+  def set_event
+    @event = Event.find(params[:id])
+  end
+  def event_params
   params.require(:event).permit(:name,:description)
-end
+  end
 end

@@ -1,14 +1,43 @@
 <h3 class="text-center">page for all events</h3>
-<% @events.each do |e| %>
-<ul class="list-unstyled">
-<li><%= e.name%></li>
-</ul>
-<%end%>
-<% @events.each do |e| %>
+
 <% if current_user %>
-<ul class="list-unstyled">
-<li> <%= e.name %> </li>
-<li> <%= e.user.username %> </li>
-</ul>
-<% end %>
-<% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+
+        <div class="text-center">
+          event name
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="text-center">
+          event creator
+        </div>
+      </div>
+    </div>
+    <div class="row border">
+      <% @events.each do |event| %>
+        <div class="col-6">
+          <div>
+            <%= link_to event.name,event_path(event.id) %>
+          </div>
+        </div>
+        <div class="col-6">
+          <div>
+            <%= event.user.username %>
+          </div>
+        </div>
+        <%end%>
+    </div>
+  </div>
+  </div>
+
+  <%else%>
+    <% @events.each do |event| %>
+      <ul class="list-unstyled">
+        <li>
+          <%= event.name%>
+        </li>
+      </ul>
+      <% end %>
+        <% end %>

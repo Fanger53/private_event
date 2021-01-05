@@ -1,4 +1,14 @@
 <h3 class="text-center">event created</h3>
+<% if current_user%>
 <%= @event.name%>
+<%= @event.description%>
 <span>created by</span>
 <%=@event.user.username%>
+
+<%= form_for  @attendance  do |f| %>
+
+<%= f.hidden_field :event_id, :value => params[:id] %>
+<%= f.hidden_field :user_id, :value => current_user.id%>
+<%= f.submit "Attend", class: "#{attendance_exist?(params[:id],current_user.id)} px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"%>
+<% end %>
+<%end%>

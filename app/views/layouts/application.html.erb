@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PrivateEvent</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
+
+<head>
+  <title>PrivateEvent</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-    <% flash.each do |name, message| %>
-    <div class="<%= name %>"><%= message %></div>
-  <% end %>
-  <nav class="navbar-expand-lg bg-dark d-flex justify-content-between">
-    <div class="form-title text-white w-25">
-    <span>simple form</span>
+<body>
+  <% flash.each do |name, message| %>
+    <div class="<%= name %> text-center ">
+      <%= message %>
     </div>
-    <ul class="d-flex justify-content-between text-white w-25">
-    <% if current_user%>
-     <li class="w-25"><%= link_to 'logout', logout_path, method: :delete %></li>
-     <li class="w-25"><%= link_to 'create event', new_event_path %></li>
-     <%else%>
-      <li class="w-25"> <%= link_to 'login', login_path %></li>
-      <li>New user? <%= link_to "Sign up now!", signup_path %></li>
-      <%end%>
-     
-    </ul>
-    </nav>
-    <%= yield %>
-  </body>
+    <% end %>
+      <nav class="navbar-expand-lg bg-dark d-flex justify-content-between">
+        <div class="form-title text-white w-25">
+          <span>simple form</span>
+        </div>
+        <ul class="d-flex justify-content-between text-white w-25">
+          <% if current_user%>
+            <li class="w-25">
+              <%= link_to 'logout' , logout_path, method: :delete %>
+            </li>
+            <li class="w-25">
+              <%= link_to 'create event' , new_event_path %>
+            </li>
+            <%else%>
+              <li class="w-25">
+                <%= link_to 'login' , login_path %>
+              </li>
+              <li><%= link_to "Signup now!" , signup_path %>
+              <li><%= link_to 'events', events_path %></li>
+              </li>
+              <%end%>
+
+        </ul>
+      </nav>
+      <%= yield %>
+</body>
+
 </html>
