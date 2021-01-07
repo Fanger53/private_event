@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 # rubocop:disabled Style/Documentation
-
 require_relative 'boot'
 
 require 'rails/all'

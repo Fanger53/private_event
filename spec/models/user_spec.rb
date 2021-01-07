@@ -11,7 +11,6 @@ RSpec.describe User, type: :model do
       expect(user).to eql(false)
     end
     it 'ensures username is unique ' do
-      user1 = User.new(username: 'blanco').save
       user2 = User.new(username: 'blanco').save
       expect(user2).to eq(false)
     end
