@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Style/Documentation
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -20,3 +24,4 @@ module PrivateEvent
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+# rubocop:enabled Style/Documentation

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Style/Documentation
 class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendances_params)
@@ -20,3 +23,4 @@ class AttendancesController < ApplicationController
     params.require(:attendance).permit(:user_id, :event_id)
   end
 end
+# rubocop:enabled Style/Documentation

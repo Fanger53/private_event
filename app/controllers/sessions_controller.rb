@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Style/Documentation
 class SessionsController < ApplicationController
   def new; end
 
@@ -19,3 +22,4 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 end
+# rubocop:enabled Style/Documentation

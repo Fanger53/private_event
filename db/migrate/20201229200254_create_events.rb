@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Style/Documentation
 class CreateEvents < ActiveRecord::Migration[6.1]
   def change
     create_table :events do |t|
@@ -9,3 +12,4 @@ class CreateEvents < ActiveRecord::Migration[6.1]
     end
   end
 end
+# rubocop:enabled Style/Documentation

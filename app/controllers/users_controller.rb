@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Style/Documentation
 class UsersController < ApplicationController
   # include SessionsHelper
   # before_action :logged_in_user ,only: [:new]
@@ -31,3 +34,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username)
   end
 end
+# rubocop:enabled Style/Documentation

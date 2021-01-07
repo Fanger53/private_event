@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Lint/UselessAssignment
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -14,3 +17,4 @@ RSpec.describe User, type: :model do
     end
   end
 end
+# rubocop:enabled Lint/UselessAssignment

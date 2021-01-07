@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Style/Documentation
 class CreateAttendances < ActiveRecord::Migration[6.1]
   def change
     create_table :attendances do |t|
@@ -7,3 +10,4 @@ class CreateAttendances < ActiveRecord::Migration[6.1]
     end
   end
 end
+# rubocop:enabled Style/Documentation

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disabled Style/Documentation
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show destroy]
   def index
@@ -47,3 +50,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :location, :date, :description)
   end
 end
+# rubocop:enabled Style/Documentation
