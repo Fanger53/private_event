@@ -11,11 +11,6 @@
 </head>
 
 <body>
-  <% flash.each do |name, message| %>
-    <div class="<%= name %> text-center ">
-      <%= message %>
-    </div>
-    <% end %>
       <nav class="navbar-expand-lg bg-dark d-flex justify-content-between mt-3">
         <div class="form-title text-white w-25">
           <span>private events</span>
@@ -44,6 +39,11 @@
 
         </ul>
       </nav>
+       <% flash.each do |name, message| %>
+    <div class="<%= name %> text-center alert alert-info ">
+      <%= message %>
+    </div>
+    <% end %>
       <%= yield %>
 </body>
 

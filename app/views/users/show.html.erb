@@ -1,6 +1,6 @@
 <h4>list of all your events</h4>
 <% current_user.events.each do |event| %>
-<p><%= link_to event.name, event_path(current_user) %></p>
+<p><%= link_to event.name, event_path(event.id) %></p>
 <%end%>
 </div>
 <h3>events you are attending</h3>
@@ -12,4 +12,25 @@
 
   <%end%>
 <% end %>
-
+<div>
+    <p class="text-center">upcoming events</p>
+      <% if @upcoming_events.any? %>
+        <% @upcoming_events.each  do |e|  %>
+       <p> <%=e.name%></p>
+        <% end %>
+        
+      <% end %>  
+    <p class="text-center">past events</p>
+     
+        <% if @past_events.any? %>
+        <% @past_events.each  do |e|  %>
+        <p> <%=e.name%></p>
+        <% end %>
+       <% else %>
+       <p>no past events yet</p>
+       
+       
+       <% end %>
+       
+    
+</div>
