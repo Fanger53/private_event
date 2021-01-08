@@ -56,9 +56,7 @@ Navigate to the folder you cloned the git repository and to run our project type
 ## Author 2
 
 
- 👤 **Che Blanchard**
-
-👤 **AChe Blanchard**
+👤 **Che Nsoh Blanchard**
 
 - GitHub: [@che30](https://github.com/che30)
 - Twitter: [@BlanchardNsoh](https://twitter.com/che55085128 )

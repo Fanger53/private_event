@@ -1,7 +1,5 @@
 # rubocop:disabled Style/Documentation
 class UsersController < ApplicationController
-  # include SessionsHelper
-  # before_action :logged_in_user ,only: [:new]
   def index; end
 
   def new
