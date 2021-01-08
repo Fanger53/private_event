@@ -1,3 +1,4 @@
+# rubocop:disabled Layout/Tab
 require 'rails_helper'
 
 RSpec.feature 'Sessions', type: :feature do
@@ -11,3 +12,4 @@ RSpec.feature 'Sessions', type: :feature do
     end
   end
 end
+# rubocop:disabled Layout/Tab
