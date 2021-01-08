@@ -12,6 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# rubocop:disabled Metrics/BlockLength
 ActiveRecord::Schema.define(version: 20_210_106_061_528) do
   create_table 'attendances', force: :cascade do |t|
     t.integer 'user_id', null: false
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20_210_106_061_528) do
     t.datetime 'date'
     t.index ['user_id'], name: 'index_events_on_user_id'
   end
+  # rubocop:enabled Metrics/BlockLength
 
   create_table 'users', force: :cascade do |t|
     t.string 'username'
