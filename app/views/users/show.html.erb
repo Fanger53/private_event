@@ -13,17 +13,17 @@
   <%end%>
 <% end %>
 <div>
-    <p class="text-center">upcoming events</p>
-      <% if @upcoming_events.any? %>
-        <% @upcoming_events.each  do |e|  %>
+    <p class="text-center">upcoming events you are attending</p>
+      <% if  current_user_upcoming_event.any? %>
+        <%  current_user_upcoming_event.each  do |e|  %>
        <p> <%=e.name%></p>
         <% end %>
         
       <% end %>  
-    <p class="text-center">past events</p>
+    <p class="text-center">past events you attended</p>
      
-        <% if @past_events.any? %>
-        <% @past_events.each  do |e|  %>
+        <% if  current_user_past_event.any? %>
+        <%  current_user_past_event.each  do |e|  %>
         <p> <%=e.name%></p>
         <% end %>
        <% else %>
