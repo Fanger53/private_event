@@ -16,7 +16,7 @@
 - Rubocop
 
 # Live Preview
-![screenshot](./app/assets/images/PrivateEvent.png)
+![screenshot](./app/assets/images/PrivateEvents.png)
 # Getting Started
 You'll need to have both Ruby and Rails installed on your computer.
 
