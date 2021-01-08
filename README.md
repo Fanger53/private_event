@@ -10,16 +10,23 @@
  
 
 # Built With
--Ruby
--Rails
-
+- Ruby on Rails
+- GitFlow 
+- Sqlite3
+- Rubocop
 
 # Live Preview
 
 # Getting Started
-This project was created with aim to  show understanding of authentication from scratch and also to show the mastering of associations and relationships between models
+You'll need to have both Ruby and Rails installed on your computer.
 
-To get a local copy up and running follow these simple example steps.
+- In the desired directory, type `git@github.com:Fanger53/private_event.git` in the terminal.
+
+- Then type `cd private_event` in the terminal to change the directory into the root of the project.
+
+- Then type `bundle install && yarn install` to download the necessary gem files for the project.
+
+- Run `rails server` to start the server for the application.
 
 ## Prerequisites
 Computer running Mac OS, Windows, or Linux Ubuntu. Internet browser: Firefox, Google Chrome, Opera...

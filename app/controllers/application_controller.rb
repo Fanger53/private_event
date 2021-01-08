@@ -1,7 +1,4 @@
-# frozen_string_literal: true
-
 # rubocop:disable Style/GuardClause
-# rubocop:disable Style/Documentation
 class ApplicationController < ActionController::Base
   helper_method :current_user, :log_in
   def log_in(user)
@@ -15,5 +12,4 @@ class ApplicationController < ActionController::Base
     end
   end
 end
-# rubocop:enable Style/Documentation
 # rubocop:enable Style/GuardClause

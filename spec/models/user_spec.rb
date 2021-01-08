@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # rubocop:disabled Lint/UselessAssignment
 require 'rails_helper'
 

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # rubocop:disabled Style/Documentation
 class AttendancesController < ApplicationController
   def create
