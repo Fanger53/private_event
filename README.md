@@ -30,13 +30,12 @@ You'll need to have both Ruby and Rails installed on your computer.
 
 # Setup
 
-- In the desired directory, type `git@github.com:Fanger53/private_event.git` in the terminal.
+- In the desired directory, type `git clone git@github.com:Fanger53/private_event.git` in the terminal.
 
 - Then type `cd private_event` in the terminal to change the directory into the root of the project.
 
 - Then type `bundle install && yarn install` to download the necessary gem files for the project.
 
-- Then type `yarn install -check-files` or `rails webpacker install if u find an error running the project `
 
 - Type `rails db:migrate`
 
