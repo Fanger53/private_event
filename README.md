@@ -34,7 +34,9 @@ You'll need to have both Ruby and Rails installed on your computer.
 
 - Then type `cd private_event` in the terminal to change the directory into the root of the project.
 
-- Then type `bundle install && yarn install` to download the necessary gem files for the project.
+- Then type : `bundle install` 
+              `yarn install` 
+  to download the necessary gem files for the project.
 
 
 - Type `rails db:migrate`
