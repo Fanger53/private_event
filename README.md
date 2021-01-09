@@ -26,7 +26,7 @@ You'll need to have both Ruby and Rails installed on your computer.
 
 - Then type `bundle install && yarn install` to download the necessary gem files for the project.
 
-- Then type `yarn install -check-files` or `webpacker install if u find an error running the project `
+- Then type `yarn install -check-files` or `rails webpacker install if u find an error running the project `
 
 - Run `rails server` to start the server for the application.
 
