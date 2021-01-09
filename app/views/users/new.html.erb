@@ -1,0 +1,10 @@
+<p class="text-center">New User form</p>
+<div class="row">
+<div class="col-12 col-md-10 col-lg-12 d-flex flex-column align-items-center">
+  <%= form_with model: @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.submit %>
+<% end %>
+</div>
+</div>

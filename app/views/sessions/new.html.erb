@@ -1,0 +1,18 @@
+<% if !current_user%>
+<% provide(:title, "Log in") %>
+<h3 class="text-center">Log in form</h3>
+<div class="row">
+<div class="col-md-6 col-lg-12   d-flex flex-column justify-content-center align-items-center">
+<%= form_with(url: login_path, scope:
+:session, local: true) do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username, class: 'form-
+control' %>
+<%= f.submit "Log in", class:"btn btn-primary" %>
+<% end %>
+
+<p>New user? <%= link_to "Sign up now!",
+signup_path %></p>
+<%end%>
+</div>
+</div>

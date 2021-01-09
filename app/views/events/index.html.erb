@@ -1,0 +1,81 @@
+<h3 class="text-center">page for all events</h3>
+
+<% if current_user %>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+
+        <div class="text-center">
+          event name
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="text-center">
+          event creator
+        </div>
+      </div>
+    </div>
+    <div class="row border">
+      <% @events.each do |event| %>
+        <div class="col-6">
+          <div>
+            <%= link_to event.name,event_path(event.id) %>
+          </div>
+        </div>
+        <div class="col-6">
+          <div>
+            <%= event.user.username %>
+          </div>
+        </div>
+        <%end%>
+    </div>
+  </div>
+  </div>
+
+  <%else%>
+    <% @events.each do |event| %>
+      <ul class="list-unstyled">
+        <li>
+          <%= event.name%>
+        </li>
+      </ul>
+      <% end %>
+        <% end %>
+       <div class="upcoming-cont">
+    <% if @upcoming.any? %>
+      <h2>Upcoming Events</h2>
+      <ul class = "upcoming">
+        <% @upcoming.each do |e| %>
+            <li>
+              <% if current_user %>
+                <%= link_to  e.name, event_path(e.id) %>
+              <% else %>
+                <%= link_to  e.name, signup_path %>
+              <% end %>
+              <div>
+               
+              </div>
+            </li>
+        <%end%>
+      </ul>
+    <% end %>
+  </div>
+     <div class="past-cont">
+    <% if @past.any? %>
+      <h2>past Events</h2>
+      <ul class = "past">
+        <% @past.each do |e| %>
+            <li>
+              <% if current_user %>
+                <%= link_to  e.name, event_path(e.id) %>
+              <% else %>
+                <%= link_to  e.name, signup_path %>
+              <% end %>
+              <div>
+               
+              </div>
+            </li>
+        <%end%>
+      </ul>
+    <% end %>
+  </div>

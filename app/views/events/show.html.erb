@@ -1,0 +1,72 @@
+<h3 class="text-center">event created</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <div>event name</div>
+    </div>
+     <div class="col-3">
+      <div>event location</div>
+    </div>
+    <div class="col-3">
+      <div>event description</div>
+    </div>
+    <div class="col-3">
+      <div>event date</div>
+    </div>
+  </div>
+  <div class="row">
+    <% if current_user%>
+    <div class="col-2">
+      <div> <%= @event.name%> </div>
+    </div>
+    <div class="col-3">
+      <div> <%= @event.location%></div>
+    </div>
+    <div class="col-3">
+      <div> <%= @event.description%></div>
+    </div>
+    <div class="col-2">
+      <div>  <%= @event.date%> </div>
+    </div>
+    <div class="col-2">
+          <div>
+            <%= link_to 'delete', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+    </div>
+    <% end %>
+  </div>
+ </div>
+
+<%= form_for  @attendance  do |f| %>
+
+<%= f.hidden_field :event_id, :value => params[:id] %>
+<%= f.hidden_field :user_id, :value => current_user.id%>
+<%= f.submit "Attend", class: "#{attendance_exist?(params[:id],current_user.id)} "%>
+<% end %>
+
+<%= form_for  @attendance,method: :delete, url: attendance_path  do |f| %>
+    <%= f.hidden_field :event_id, :value => params[:id] %>
+    <%= f.hidden_field :user_id, :value => current_user[:id] %>
+    <%= f.submit "unattend", class: "#{attendance_not_exist?(params[:id],current_user.id)} px-2 inline-flex "%>
+<% end %>
+<% if @users_not_in.any? %>
+    <h3>Invite user</h3>
+    <%= form_for @attendance do |f| %>
+      <%= f.hidden_field  :event_id, :value => params[:id] %>
+      <%= select("user", "user_id", @users_not_in.collect {|p| [ p.username, p.id ] }, class: 'invitee') %>
+      <%= f.submit 'Invite', class: 'invite-btn' %>
+    <% end %>
+  <% end %>
+
+<% if @event.attendees.any? %>
+<h3 class="text-center mt-2">Attendees</h3>
+<ul class="list-unstyled">
+  <% @event.attendees.each do |a| %>
+    <li>
+      <%= a.username %>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+<p>no event attendance yet</p>
+<% end %>
